@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Muzbuild</title>
+    <title>One Month Rails Project</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= link_to "Home", root_path %>
-    <%= link_to "About", about_path %>
-    <%= link_to "Contact us", contactus_path %>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-item"><%= link_to "Home", root_path, class: "nav-link"%></a>
+      </li>
+         <li class="nav-item active">
+        <a class="nav-item"><%= link_to "About", about_path, class: "nav-link"%></a>
+      </li>
+   <li class="nav-item active">
+        <a class="nav-item" ><%= link_to "Contact", contactus_path, class: "nav-link"%></a>
+      </li>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
+
+
+    <!-- Page Content -->
     <%= yield %>
-    // Footer goes here
+    
+    <!-- Footer -->
+    <footer class="small text-muted">
+      <div class="container">
+        <hr>
+        <center>
+          <p>© 2016 One Month</p>
+        </center>
+      </div>
+    </footer>
+
   </body>
 </html>
