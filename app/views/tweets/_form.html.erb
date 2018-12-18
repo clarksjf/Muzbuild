@@ -1,0 +1,26 @@
+<%= form_with(model: tweet, local: true) do |form| %>
+  <% if tweet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
+
+      <ul>
+      <% tweet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="form-group">
+    <%= form.label :content %>
+    <%= form.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+<!-- by adding a ,submit between the submit and class above, you force the button label to be submit no matter what the context-->
