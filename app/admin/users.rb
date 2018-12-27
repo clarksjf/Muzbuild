@@ -13,10 +13,12 @@ ActiveAdmin.register User do
 # end
 
 #the items below dictate what fields are in the admin, go to  l8 to view
-	permit_params :email, :admin
+	permit_params :email, :admin, :username, :name
 	form do |f|
 		f.semantic_errors
 		f.inputs do
+			f.input :username
+			f.input :name
 			f.input :email
 			f.input :admin
 		end
@@ -26,6 +28,8 @@ ActiveAdmin.register User do
 #the items below dictate what fields can be seen in admin
 	index do
 			id_column
+			column :username
+			column :name
 			column :email
 			column :admin
 			actions
